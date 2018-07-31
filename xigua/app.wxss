@@ -1,0 +1,22 @@
+page {
+    background: linear-gradient(#1e2b39,#5f90b7);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+.trans-btn {
+    padding: 0px;
+    background-color: transparent;
+}
+
+.trans-btn::after {
+    border: none;
+}

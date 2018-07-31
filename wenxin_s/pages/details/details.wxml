@@ -1,0 +1,17 @@
+<view class="details">
+    <view class="songer">{{song.title}}</view>
+    <view class="user">{{song.author}}</view>
+    <image class="{{action}}" src="{{song.image}}"></image>
+    <view class="free-MusicProgress">
+        <view style="width:{{progress}}%"></view>
+    </view>
+    <view class="control">
+        <audio  src="{{song.src}}" id="myAudio" ></audio>
+        <view>
+            <button class="lock"  bindtap="topTo">上一曲</button>
+            <button class="const" wx:if="{{constart}}"  bindtap="audioPlay">||</button>
+            <button class="const" wx:if="{{constop}}"  bindtap="audioPause">|></button>
+            <button class="lock" bindtap="lastTo">下一曲</button>
+        </view>
+    </view>
+</view>

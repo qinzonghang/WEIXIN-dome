@@ -1,0 +1,65 @@
+page,.details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+page{
+    background: #666;
+}
+.songer{
+    color: brown;
+    margin-top:20rox;
+    text-align: center;
+}
+.user{
+    margin-top:20rpx;
+    font-size: 25rpx;
+}
+image{
+    border-radius: 50%;
+    width: 600rpx;
+    height: 600rpx;
+    margin-top:15rpx;
+}
+.action{
+    animation: fengchedonghua 8s linear infinite;
+}
+
+@keyframes fengchedonghua
+    {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+    }
+
+.free-MusicProgress{
+    margin-top: 20rpx;
+  width:78%;
+  left:21.7%;
+  bottom:1rpx;
+  background:#C3C3C3;
+}
+.free-MusicProgress>view{
+  background:#48c23d;
+  height:6rpx;
+}
+.control{
+    width: 100%;
+    height: 50rpx;
+}
+.control>view{
+    width: 100%;
+    height: 50rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.const{
+   width: 100rpx;
+   height: 100rpx;
+   border-radius: 50%;
+}
+.lock,.const{
+    background: rgba(88, 76, 76, 0.6)
+}

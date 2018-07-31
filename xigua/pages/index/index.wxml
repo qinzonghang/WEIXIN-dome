@@ -1,0 +1,21 @@
+<view class="container">
+    <view class="title" style="margin-top:50px;">
+  中国<text>34</text>个省，<text>660</text>个城市
+  </view>
+    <view class="title" style="margin-top:10px;">你去过多少？</view>
+    <image class="chinamap" mode="aspectMode" src="../../images/chinamap.png"></image>
+    <button bindtap="start" class="start-btn" style="margin-top:-35px;" type="primary">开  始</button>
+    <button class="start-btn" openType="contact" sessionFrom="weapp" style="margin-top:15px;" type="warn">回复"1"，领每日礼包</button>
+</view>
+<view class="drawer_screen" wx:if="{{showModalStatus}}"></view>
+<view class="drawer_box" wx:if="{{showModalStatus}}">
+    <image mode="aspectFit" src="../../images/up.png" style="width:100px;margin-right:20px;"></image>
+    <view class="drawer_content_box">
+        <view bindtap="doClose" class="drawer_title">
+            <button class="drawer_title_button trans-btn">x</button>
+        </view>
+        <view class="drawer_content">
+            <image class="drawer_content_image" mode="aspectFit" src="../../images/xigua.png"></image>
+        </view>
+    </view>
+</view>
