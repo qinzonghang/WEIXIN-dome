@@ -5,7 +5,7 @@
     <view class="title" style="margin-top:10px;">你去过多少？</view>
     <image class="chinamap" mode="aspectMode" src="../../images/chinamap.png"></image>
     <button bindtap="start" class="start-btn" style="margin-top:-35px;" type="primary">开  始</button>
-    <button class="start-btn" openType="contact" sessionFrom="weapp" style="margin-top:15px;" type="warn">回复"1"，领每日礼包</button>
+    <!-- <button class="start-btn" openType="contact" sessionFrom="weapp" style="margin-top:15px;" type="warn">回复"1"，领每日礼包</button> -->
 </view>
 <view class="drawer_screen" wx:if="{{showModalStatus}}"></view>
 <view class="drawer_box" wx:if="{{showModalStatus}}">

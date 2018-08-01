@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+     <web-view class="box" src="https://www.baidu.com/"></web-view>
+</view>

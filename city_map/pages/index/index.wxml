@@ -1,11 +1,14 @@
 <!--index.wxml-->
 <view class="container">
   <view class="citylist">
-      <view class="{{index==indexer?'list_child action':'list_child'}}" wx:for="{{list}}" bindtap='click' data-index="{{index}}">{{item.provinceName}}</view>
+      <view class="{{index==indexer?'list_child action':'list_child'}}" wx:for="{{list}}" bindtap='click' data-index="{{index}}">{{item.provinceName}}
+        <view wx:if="{{item.n>0}}" class="n">{{item.n}}</view>
+      </view>
   </view>
   <view class="address">
 
-        <view class="dr-ch" wx:for="{{address}}" bindtap="clickadr" data-index="{{index}}">{{item.citysName}}</view>
+        <view class="{{item.states?'dr-ch action':'dr-ch'}}" wx:for="{{address}}" bindtap="clickadr" data-index="{{index}}">{{item.citysName}}</view>
 
   </view>
+  <view class="clickup" bindtap="Up">提交</view>
 </view>

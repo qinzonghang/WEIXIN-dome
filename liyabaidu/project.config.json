@@ -4,16 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.9",
+	"libVersion": "2.2.1",
 	"appid": "wxb9034e6dea4d107b",
-	"projectname": "%E8%A5%BF%E7%93%9C",
+	"projectname": "baidu",
+	"isGameTourist": false,
 	"condition": {
 		"search": {
 			"current": -1,

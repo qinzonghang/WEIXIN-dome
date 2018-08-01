@@ -1,8 +1,5 @@
 {
 	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -10,10 +7,10 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"compileType": "miniprogram",
-	"libVersion": "2.0.9",
-	"appid": "wxb9034e6dea4d107b",
-	"projectname": "%E8%A5%BF%E7%93%9C",
+	"compileType": "game",
+	"libVersion": "game",
+	"appid": "wxd02fa6c1c685ba29",
+	"projectname": "aircraft",
 	"condition": {
 		"search": {
 			"current": -1,
