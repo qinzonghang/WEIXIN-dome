@@ -1,25 +1,35 @@
 import echarts from '../../ec-canvas/echarts'
 
-function initChart(canvas, width, height) {
-    const chart = echarts.init(canvas, null, {
-      width: width,
-      height: height
-    });
-    canvas.setChart(chart);
+import  '../../ec-canvas/china.js'
+
+import mapData from './mapData.js'
+
+function setOption(chart,data) { //地图配置部分
   
-    var option = {
+    const option = {
         geo : {
             map: 'china',
-        }
+        },
+        series: [{
+            name: 'map',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            itemStyle: {
+                normal: {
+                    color: 'red'
+                }
+            },
+            data: data
+        }],
     };
     chart.setOption(option);
-    return chart;
+    
   }
 
 Page({
     data : {
         ec: {
-            onInit: initChart
+            lazyLoad: true
           },
        list : [] ,
        province : [] , //省份
@@ -40,7 +50,6 @@ Page({
                     m : this.data.province.length+1
                 })
                 item.citys.forEach((value,key)=>{ //城市
-                    console.log(value)
                     if(value.states){
                          this.setData({
                              citys : [...this.data.citys,value],
@@ -50,5 +59,33 @@ Page({
                 })
             }
         })
+
+        //echart 地图部分
+        this.ecComponent = this.selectComponent('#mychart-dom-bar');
+        this.ecComponent.init((canvas, width, height) => {
+            // 获取组件的 canvas、width、height 后的回调函数
+            // 在这里初始化图表
+            const chart = echarts.init(canvas, null, {
+                width: width,
+                height: height
+            });
+            canvas.setChart(chart);
+            console.log('----------已选择的省份',this.data.province)
+            let data = [] //需要传参的数据
+            this.data.province.forEach((item,index)=>{
+                mapData.forEach((value,key)=>{
+                    if(value.name==item.provinceName){
+                        data = [...data,value.cp]
+                    }
+                })
+            })
+            //let data= [[109.9512,19.2041]] //需要传参的数据
+            setOption(chart, data);
+
+            // 将图表实例绑定到 this 上，可以在其他成员函数（如 dispose）中访问
+            this.chart = chart;
+            // 注意这里一定要返回 chart 实例，否则会影响事件处理等
+            return chart;
+        });
     },
 })
