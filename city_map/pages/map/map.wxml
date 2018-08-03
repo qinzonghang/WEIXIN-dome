@@ -1,10 +1,7 @@
 <view class="map-box">
     <image class="back" src="../../images/mapbg.png" alt=""></image>
     <view class="map">
-        <view class="wrap">
-            <image class="henan" src="../../images/henan.png"></image>
-            <image class="shanxi" src="../../images/shanxi.png"></image>
-        </view>
+        <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
     </view>
     <view class="text">
         <view class="top">去过的地方</view>
