@@ -2,7 +2,7 @@
 export let getCityList = ()=>{
     return new Promise((resolve, reject)=>{
         wx.request({
-            url: 'https://www.easy-mock.com/mock/5b480d59ae45641f63210b44/example/City',
+          url: 'https://mock.jasonandjay.com/mock/5b5fb5947a32f77e39e46a2c/example/city',
             success: (res)=>{
                 resolve(res.data);
             },
