@@ -7,13 +7,23 @@ import mapData from './mapData.js'
 function setOption(chart,data) { //地图配置部分
   
     const option = {
+        textStyle : {
+          fontStyle: 'oblique'
+        },
         geo : {
             map: 'china',
+            zoom: 1.2, //地图的缩放
+            label : {
+              show : true ,//省份名显示
+              color: '#666',//文字颜色
+              fontSize : 8
+            } 
         },
         series: [{
             name: 'map',
-            type: 'scatter',
+          type: 'scatter',
             coordinateSystem: 'geo',
+            
             itemStyle: {
                 normal: {
                     color: 'red'
@@ -70,7 +80,6 @@ Page({
                 height: height
             });
             canvas.setChart(chart);
-            console.log('----------已选择的省份',this.data.province)
             let data = [] //需要传参的数据
             this.data.province.forEach((item,index)=>{
                 mapData.forEach((value,key)=>{
@@ -80,12 +89,13 @@ Page({
                 })
             })
             //let data= [[109.9512,19.2041]] //需要传参的数据
-            setOption(chart, data);
+            setOption( chart, data );
 
             // 将图表实例绑定到 this 上，可以在其他成员函数（如 dispose）中访问
             this.chart = chart;
             // 注意这里一定要返回 chart 实例，否则会影响事件处理等
             return chart;
         });
+        
     },
 })
